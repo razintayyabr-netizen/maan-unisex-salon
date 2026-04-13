@@ -12,9 +12,10 @@ export default function Footer() {
                 <p className="text-[10px] tracking-[0.3em] text-[var(--rose-gold-light)] uppercase">Unisex Salon</p>
               </div>
             </div>
-            <p className="text-gray-500 text-sm leading-relaxed">
-              Premium hair & beauty services. Trained by Habib. Unbeatable prices.
-            </p>
+              <p className="text-gray-400 text-sm leading-relaxed">
+                Premium hair & beauty services. Trained by Habib. Unbeatable prices.
+              </p>
+              <p className="text-gray-500 text-sm mt-3">📍 Hastal, Uttam Nagar, Delhi</p>
           </div>
 
           {/* Quick Links */}

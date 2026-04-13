@@ -47,8 +47,8 @@ export default function Contact() {
         <div className="mt-12 gallery-placeholder rounded-2xl h-64 flex items-center justify-center">
           <div className="text-center">
             <span className="text-4xl mb-2 block">📍</span>
-            <p className="text-gray-400">Visit us at our salon</p>
-            <p className="text-gray-500 text-sm mt-1">Call for exact location & directions</p>
+            <p className="text-gray-400">Hastal, Uttam Nagar, Delhi</p>
+            <a href="https://maps.google.com/?q=Hastal+Uttam+Nagar+Delhi" target="_blank" rel="noopener noreferrer" className="text-[var(--rose-gold)] text-sm mt-2 inline-block hover:underline">📍 Open in Google Maps</a>
           </div>
         </div>
       </div>

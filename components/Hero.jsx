@@ -3,13 +3,14 @@
 export default function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0" style={{
-          backgroundImage: `radial-gradient(circle at 25% 25%, var(--rose-gold) 1px, transparent 1px),
-                            radial-gradient(circle at 75% 75%, var(--rose-gold) 1px, transparent 1px)`,
-          backgroundSize: '50px 50px'
-        }} />
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <img
+          src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=1920&h=1080&fit=crop"
+          alt="Salon background"
+          className="w-full h-full object-cover"
+        />
+        <div className="hero-overlay absolute inset-0" />
       </div>
       
       {/* Gradient orbs */}
@@ -29,7 +30,7 @@ export default function Hero() {
         <p className="font-display text-2xl sm:text-3xl text-[var(--rose-gold-light)] mb-6 tracking-wider">
           UNISEX SALON
         </p>
-        <p className="text-lg sm:text-xl text-gray-400 mb-10 max-w-2xl mx-auto">
+        <p className="text-lg sm:text-xl text-gray-300 mb-10 max-w-2xl mx-auto">
           Where beauty meets expertise. Premium hair & beauty services at unbeatable prices.
         </p>
 
@@ -51,10 +52,16 @@ export default function Hero() {
           </a>
         </div>
 
-        {/* Timing */}
-        <div className="mt-12 inline-flex items-center gap-3 px-6 py-3 rounded-full bg-[var(--dark-card)] border border-[var(--rose-gold)]/15">
-          <span className="text-[var(--rose-gold)]">🕐</span>
-          <span className="text-gray-300 text-sm">Open: 8:00 AM – 9:30 PM</span>
+        {/* Timing + Location */}
+        <div className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-[var(--dark-card)] border border-[var(--rose-gold)]/15">
+            <span className="text-[var(--rose-gold)]">🕐</span>
+            <span className="text-gray-300 text-sm">8:00 AM – 9:30 PM</span>
+          </div>
+          <div className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-[var(--dark-card)] border border-[var(--rose-gold)]/15">
+            <span className="text-[var(--rose-gold)]">📍</span>
+            <span className="text-gray-300 text-sm">Hastal, Uttam Nagar, Delhi</span>
+          </div>
         </div>
       </div>
 
