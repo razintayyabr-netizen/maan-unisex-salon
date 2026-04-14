@@ -15,23 +15,21 @@ export default function Gallery() {
   const [active, setActive] = useState(null);
 
   return (
-    <section id="gallery" className="py-28 px-6">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <span className="text-[var(--rose)] text-xs tracking-[0.4em] uppercase font-medium">Our Work</span>
-          <h2 className="font-display text-5xl sm:text-6xl font-bold mt-4 mb-5">
-            <span className="gradient-text">Gallery</span>
-          </h2>
-          <div className="section-line w-32 mx-auto" />
+    <section id="gallery" className="section">
+      <div className="section-inner">
+        <div className="section-header">
+          <span className="section-label">Our Work</span>
+          <h2 className="section-title"><span className="gradient-text">Gallery</span></h2>
+          <div className="section-line" />
         </div>
 
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="gallery-grid">
           {images.map((img, i) => (
-            <div key={i} className="gallery-item aspect-square" onClick={() => setActive(img)}>
-              <img src={img.src} alt={img.label} className="w-full h-full object-cover" loading="lazy" />
+            <div key={i} className="gallery-item" onClick={() => setActive(img)}>
+              <img src={img.src} alt={img.label} loading="lazy" />
               <div className="gallery-label">
-                <p className="font-display text-xl font-semibold text-white">{img.label}</p>
-                <p className="text-gray-400 text-sm mt-1">Click to view</p>
+                <p>{img.label}</p>
+                <p>Click to view</p>
               </div>
             </div>
           ))}
@@ -39,11 +37,11 @@ export default function Gallery() {
       </div>
 
       {active && (
-        <div className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-6" onClick={() => setActive(null)}>
-          <div className="relative max-w-4xl">
-            <img src={active.src} alt={active.label} className="rounded-2xl max-h-[85vh] w-auto mx-auto" />
-            <button onClick={() => setActive(null)} className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 transition-all">✕</button>
-            <p className="text-center font-display text-2xl text-white mt-5">{active.label}</p>
+        <div className="lightbox" onClick={() => setActive(null)}>
+          <div style={{ position: 'relative', maxWidth: '900px' }}>
+            <img src={active.src} alt={active.label} />
+            <div className="lightbox-close" onClick={() => setActive(null)}>✕</div>
+            <p className="lightbox-label">{active.label}</p>
           </div>
         </div>
       )}

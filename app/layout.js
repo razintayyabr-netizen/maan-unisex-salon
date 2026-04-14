@@ -3,12 +3,6 @@ import './globals.css';
 export const metadata = {
   title: 'MAAN Unisex Salon | Premium Hair & Beauty Services | Trained by Habib',
   description: 'MAAN Unisex Salon — Premium hair smoothing, bridal makeup, keratin treatments & more. Trained by Habib. Hastal, Uttam Nagar, Delhi. Book now!',
-  keywords: 'salon, unisex salon, bridal makeup, hair smoothing, keratin, hair spa, beauty salon, uttam nagar, delhi',
-  openGraph: {
-    title: 'MAAN Unisex Salon | Premium Hair & Beauty',
-    description: 'Trained by Habib. Premium hair & beauty services at unbeatable prices.',
-    type: 'website',
-  },
 };
 
 export default function RootLayout({ children }) {
@@ -20,13 +14,10 @@ export default function RootLayout({ children }) {
       </head>
       <body className="antialiased">
         {children}
-        
-        {/* WhatsApp Float */}
         <a
           href="https://wa.me/917011810776?text=Hi! I'd like to book an appointment at MAAN Unisex Salon"
           target="_blank"
-          rel="noopener noreferrer"
-          className="float-whatsapp fixed bottom-6 right-6 z-50 w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform"
+          className="whatsapp-float"
           aria-label="Chat on WhatsApp"
         >
           <svg width="30" height="30" viewBox="0 0 24 24" fill="white">
