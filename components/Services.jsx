@@ -1,112 +1,102 @@
 const services = [
   {
-    icon: '💆‍♀️',
     name: 'Smoothing',
     price: '₹1,999',
-    desc: 'Silky smooth, frizz-free hair that lasts weeks. Professional-grade treatment for all hair types.',
+    desc: 'Silky smooth, frizz-free hair that lasts weeks. Professional-grade treatment.',
     tag: 'Popular',
-    image: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=400&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=500&h=350&fit=crop',
   },
   {
-    icon: '💄',
     name: 'Party Makeup',
     price: '₹999',
-    desc: 'Stunning looks for every celebration. From subtle glam to bold party-ready styles.',
+    desc: 'Stunning looks for every celebration. Subtle glam to bold party-ready.',
     tag: 'Best Value',
-    image: 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=400&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=500&h=350&fit=crop',
   },
   {
-    icon: '✨',
     name: 'Keratin Treatment',
     price: '₹1,499',
-    desc: 'Deep keratin infusion for stronger, shinier, healthier hair. Reduces breakage significantly.',
+    desc: 'Deep keratin infusion for stronger, shinier, healthier hair.',
     tag: '',
-    image: 'https://images.unsplash.com/photo-1519699047748-1b463d4baa73?w=400&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1519699047748-1b463d4baa73?w=500&h=350&fit=crop',
   },
   {
-    icon: '👰',
     name: 'Bridal Makeup',
     price: '₹3,999',
-    desc: 'Your perfect bridal glow. Professional HD makeup that looks stunning in person and on camera.',
+    desc: 'Your perfect bridal glow. HD makeup stunning on camera and in person.',
     tag: 'Premium',
-    image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=400&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=500&h=350&fit=crop',
   },
   {
-    icon: '🎨',
     name: 'Global Color',
     price: '₹999',
-    desc: 'Full head coloring with premium international brands. Vibrant, long-lasting results.',
+    desc: 'Full head coloring with premium brands. Vibrant, long-lasting results.',
     tag: '',
-    image: 'https://images.unsplash.com/photo-1605497788046-5f5db6d5a9a0?w=400&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1605497788046-5f5db6d5a9a0?w=500&h=350&fit=crop',
   },
   {
-    icon: '💒',
-    name: 'Pre-Bridal + Bridal Makeup',
+    name: 'Pre-Bridal + Bridal',
     price: '₹7,999',
-    desc: 'Complete bridal package — skincare prep, facials, and stunning makeup for your big day.',
+    desc: 'Complete bridal package — skincare prep, facials & stunning makeup.',
     tag: 'Best Deal',
-    image: 'https://images.unsplash.com/photo-1519741497674-611041407985?w=400&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1519741497674-611041407985?w=500&h=350&fit=crop',
   },
   {
-    icon: '🧖‍♀️',
     name: 'Hair Spa',
     price: '₹399',
-    desc: 'Relaxing deep conditioning treatment. Revitalizes damaged hair and soothes the scalp.',
+    desc: 'Relaxing deep conditioning. Revitalizes damaged hair, soothes scalp.',
     tag: '',
-    image: 'https://images.unsplash.com/photo-1521590832167-7bcbfa368690?w=400&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1521590832167-7bcbfa368690?w=500&h=350&fit=crop',
   },
   {
-    icon: '🌸',
-    name: 'Thread + De-Tan + Facial + Wax',
+    name: 'Complete Beauty Package',
     price: '₹999',
-    desc: 'Complete beauty package — threading, de-tanning, facial, and full wax. All-in-one glow up!',
+    desc: 'Threading + De-Tan + Facial + Wax. All-in-one glow up!',
     tag: 'Combo',
-    image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=400&h=300&fit=crop',
+    image: 'https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=500&h=350&fit=crop',
   },
 ];
 
 export default function Services() {
   return (
-    <section id="services" className="py-20 px-4 sm:px-6">
-      <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-16">
-          <span className="text-[var(--rose-gold)] text-sm tracking-[0.3em] uppercase font-medium">What We Offer</span>
-          <h2 className="font-display text-4xl sm:text-5xl font-bold mt-3 mb-4">
-            Our <span className="gradient-text">Services</span>
+    <section id="services" className="py-28 px-6 relative">
+      {/* BG accent */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[var(--rose)]/3 rounded-full blur-[200px]" />
+
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Header */}
+        <div className="text-center mb-20">
+          <span className="text-[var(--rose)] text-xs tracking-[0.4em] uppercase font-medium">Our Services</span>
+          <h2 className="font-display text-5xl sm:text-6xl font-bold mt-4 mb-5">
+            What We <span className="gradient-text">Offer</span>
           </h2>
-          <div className="section-divider w-24 mx-auto" />
+          <div className="section-line w-32 mx-auto" />
         </div>
 
-        {/* Services Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
           {services.map((svc, i) => (
-            <div key={i} className="service-card rounded-2xl overflow-hidden relative group">
-              {svc.tag && (
-                <span className="absolute top-3 right-3 z-10 text-[10px] font-bold tracking-wider uppercase px-2 py-1 rounded-full bg-[var(--rose-gold)]/20 text-[var(--rose-gold-light)] border border-[var(--rose-gold)]/20">
-                  {svc.tag}
-                </span>
-              )}
+            <div key={i} className="service-card rounded-2xl group">
               {/* Image */}
-              <div className="h-44 overflow-hidden">
-                <img
-                  src={svc.image}
-                  alt={svc.name}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                  loading="lazy"
-                />
+              <div className="relative h-48 overflow-hidden">
+                <img src={svc.image} alt={svc.name} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" loading="lazy" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[var(--dark-card)] via-transparent to-transparent" />
+                {svc.tag && (
+                  <span className="absolute top-4 right-4 text-[10px] font-bold tracking-widest uppercase px-3 py-1.5 rounded-full bg-[var(--rose)]/15 text-[var(--rose-light)] border border-[var(--rose)]/15 backdrop-blur-sm">
+                    {svc.tag}
+                  </span>
+                )}
               </div>
               {/* Content */}
-              <div className="p-5">
-                <h3 className="font-display text-lg font-semibold mb-1">{svc.name}</h3>
-                <p className="text-gray-400 text-sm mb-4 leading-relaxed">{svc.desc}</p>
+              <div className="p-6 pt-3">
+                <h3 className="font-display text-xl font-semibold mb-2 group-hover:text-[var(--rose-light)] transition-colors">{svc.name}</h3>
+                <p className="text-gray-500 text-sm mb-5 leading-relaxed">{svc.desc}</p>
                 <div className="flex items-center justify-between">
-                  <span className="text-xl font-bold gradient-text">{svc.price}</span>
+                  <span className="text-2xl font-bold gradient-text-gold">{svc.price}</span>
                   <a
                     href={`https://wa.me/917011810776?text=Hi! I'd like to book ${svc.name} at MAAN Unisex Salon`}
                     target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-xs text-[var(--rose-gold)] border border-[var(--rose-gold)]/30 rounded-full px-3 py-1 hover:bg-[var(--rose-gold)]/10 transition-colors"
+                    className="text-xs font-medium text-[var(--rose-light)] border border-[var(--rose)]/20 rounded-full px-4 py-2 hover:bg-[var(--rose)]/10 transition-all"
                   >
                     Book →
                   </a>

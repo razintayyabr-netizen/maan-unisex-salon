@@ -11,43 +11,44 @@ const offers = [
 
 export default function Offers() {
   return (
-    <section id="offers" className="py-20 px-4 sm:px-6 relative overflow-hidden">
-      {/* Decorative orb */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-[var(--rose-gold)]/5 rounded-full blur-[120px]" />
+    <section id="offers" className="py-28 px-6 relative overflow-hidden">
+      {/* Decorative */}
+      <div className="absolute -right-60 top-20 w-[500px] h-[500px] bg-[var(--gold)]/5 rounded-full blur-[200px]" />
+      <div className="absolute -left-60 bottom-20 w-[500px] h-[500px] bg-[var(--rose)]/5 rounded-full blur-[200px]" />
 
-      <div className="max-w-5xl mx-auto relative z-10">
+      <div className="max-w-4xl mx-auto relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="offer-badge inline-block text-sm tracking-[0.3em] uppercase font-medium px-4 py-2 rounded-full border border-[var(--rose-gold)]/30 bg-[var(--rose-gold)]/10 text-[var(--rose-gold-light)] mb-4">
-            🔥 Special Offers
-          </span>
-          <h2 className="font-display text-4xl sm:text-5xl font-bold mb-4">
-            Unbeatable <span className="gradient-text">Prices</span>
+          <div className="offer-badge inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[var(--rose)]/20 bg-[var(--rose)]/5 mb-5">
+            <span className="text-[var(--rose)]">🔥</span>
+            <span className="text-sm text-[var(--rose-light)] font-medium tracking-wide">Special Offers</span>
+          </div>
+          <h2 className="font-display text-5xl sm:text-6xl font-bold mb-5">
+            Unbeatable <span className="gradient-text-gold">Prices</span>
           </h2>
-          <p className="text-gray-400">Limited time offers — book now and save big!</p>
-          <div className="section-divider w-24 mx-auto mt-6" />
+          <p className="text-gray-500">Limited time — book now and save big!</p>
+          <div className="section-line w-32 mx-auto mt-6" />
         </div>
 
-        {/* Offers Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          {offers.map((offer, i) => (
-            <div key={i} className="flex items-center justify-between p-5 rounded-xl bg-[var(--dark-card)] border border-[var(--rose-gold)]/10 hover:border-[var(--rose-gold)]/30 transition-all group">
+        {/* List */}
+        <div className="space-y-3">
+          {offers.map((o, i) => (
+            <div key={i} className="offer-card rounded-xl p-5 flex items-center justify-between">
               <div className="flex-1">
-                <h3 className="font-display text-lg font-semibold group-hover:text-[var(--rose-gold-light)] transition-colors">{offer.name}</h3>
+                <h3 className="font-display text-lg font-semibold">{o.name}</h3>
                 <div className="flex items-center gap-3 mt-1">
-                  <span className="text-2xl font-bold gradient-text">{offer.price}</span>
-                  <span className="text-sm text-gray-500 line-through">{offer.original}</span>
+                  <span className="text-xl font-bold gradient-text-gold">{o.price}</span>
+                  <span className="text-sm text-gray-600 line-through">{o.original}</span>
                 </div>
               </div>
-              <div className="flex flex-col items-end gap-2">
-                <span className="text-xs font-bold px-3 py-1 rounded-full bg-green-500/20 text-green-400 border border-green-500/20">
-                  SAVE {offer.save}
+              <div className="flex items-center gap-4">
+                <span className="text-xs font-bold px-3 py-1.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/15">
+                  SAVE {o.save}
                 </span>
                 <a
-                  href={`https://wa.me/917011810776?text=Hi! I want the special offer: ${offer.name} at ${offer.price}`}
+                  href={`https://wa.me/917011810776?text=Hi! I want the special offer: ${o.name} at ${o.price}`}
                   target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-xs text-[var(--rose-gold)] hover:underline"
+                  className="text-[var(--rose-light)] hover:text-white transition-colors text-sm font-medium"
                 >
                   Claim →
                 </a>
@@ -57,14 +58,14 @@ export default function Offers() {
         </div>
 
         {/* CTA */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-14">
           <a
             href="https://wa.me/917011810776?text=Hi! I'd like to book an appointment at MAAN Unisex Salon"
             target="_blank"
-            rel="noopener noreferrer"
-            className="btn-shimmer inline-block px-10 py-4 rounded-full text-lg font-semibold text-white"
+            className="btn-primary inline-flex items-center gap-3 px-12 py-4 rounded-full text-lg font-medium"
           >
-            📞 Book Your Appointment Now
+            Book Your Appointment
+            <svg width="18" height="18" fill="none" stroke="currentColor" strokeWidth="2"><path d="M4 9h14M11 4l7 7-7 7" /></svg>
           </a>
         </div>
       </div>

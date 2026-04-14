@@ -2,91 +2,51 @@
 
 import { useState } from 'react';
 
-const galleryImages = [
-  {
-    src: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&h=600&fit=crop',
-    alt: 'Hair styling at MAAN Salon',
-    label: 'Hair Styling',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&h=600&fit=crop',
-    alt: 'Makeup service at MAAN Salon',
-    label: 'Makeup',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=600&fit=crop',
-    alt: 'Bridal makeup at MAAN Salon',
-    label: 'Bridal',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1519699047748-1b463d4baa73?w=600&h=600&fit=crop',
-    alt: 'Hair spa treatment at MAAN Salon',
-    label: 'Hair Spa',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1605497788046-5f5db6d5a9a0?w=600&h=600&fit=crop',
-    alt: 'Hair coloring at MAAN Salon',
-    label: 'Hair Color',
-  },
-  {
-    src: 'https://images.unsplash.com/photo-1521590832167-7bcbfa368690?w=600&h=600&fit=crop',
-    alt: 'Beauty treatment at MAAN Salon',
-    label: 'Keratin',
-  },
+const images = [
+  { src: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&h=600&fit=crop', label: 'Hair Styling' },
+  { src: 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&h=600&fit=crop', label: 'Makeup' },
+  { src: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=600&fit=crop', label: 'Bridal' },
+  { src: 'https://images.unsplash.com/photo-1519699047748-1b463d4baa73?w=600&h=600&fit=crop', label: 'Hair Spa' },
+  { src: 'https://images.unsplash.com/photo-1605497788046-5f5db6d5a9a0?w=600&h=600&fit=crop', label: 'Hair Color' },
+  { src: 'https://images.unsplash.com/photo-1521590832167-7bcbfa368690?w=600&h=600&fit=crop', label: 'Keratin' },
 ];
 
 export default function Gallery() {
-  const [selected, setSelected] = useState(null);
+  const [active, setActive] = useState(null);
 
   return (
-    <section id="gallery" className="py-20 px-4 sm:px-6">
+    <section id="gallery" className="py-28 px-6">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <span className="text-[var(--rose-gold)] text-sm tracking-[0.3em] uppercase font-medium">Our Work</span>
-          <h2 className="font-display text-4xl sm:text-5xl font-bold mt-3 mb-4">
+          <span className="text-[var(--rose)] text-xs tracking-[0.4em] uppercase font-medium">Our Work</span>
+          <h2 className="font-display text-5xl sm:text-6xl font-bold mt-4 mb-5">
             <span className="gradient-text">Gallery</span>
           </h2>
-          <p className="text-gray-400">See the magic we create every day</p>
-          <div className="section-divider w-24 mx-auto mt-6" />
+          <div className="section-line w-32 mx-auto" />
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {galleryImages.map((img, i) => (
-            <div
-              key={i}
-              className="relative aspect-square rounded-2xl overflow-hidden cursor-pointer group"
-              onClick={() => setSelected(img)}
-            >
-              <img
-                src={img.src}
-                alt={img.alt}
-                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                loading="lazy"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <p className="absolute bottom-4 left-4 text-white font-display font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                {img.label}
-              </p>
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-5">
+          {images.map((img, i) => (
+            <div key={i} className="gallery-item aspect-square" onClick={() => setActive(img)}>
+              <img src={img.src} alt={img.label} className="w-full h-full object-cover" loading="lazy" />
+              <div className="gallery-label">
+                <p className="font-display text-xl font-semibold text-white">{img.label}</p>
+                <p className="text-gray-400 text-sm mt-1">Click to view</p>
+              </div>
             </div>
           ))}
         </div>
       </div>
 
       {/* Lightbox */}
-      {selected && (
-        <div
-          className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4"
-          onClick={() => setSelected(null)}
-        >
-          <div className="relative max-w-3xl max-h-[80vh]">
-            <img src={selected.src} alt={selected.alt} className="rounded-2xl max-h-[80vh] w-auto" />
-            <button
-              className="absolute top-4 right-4 w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-colors"
-              onClick={() => setSelected(null)}
-            >
+      {active && (
+        <div className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-6" onClick={() => setActive(null)}>
+          <div className="relative max-w-4xl">
+            <img src={active.src} alt={active.label} className="rounded-2xl max-h-[85vh] w-auto mx-auto" />
+            <button onClick={() => setActive(null)} className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 transition-all">
               ✕
             </button>
-            <p className="text-center text-white font-display text-xl mt-4">{selected.label}</p>
+            <p className="text-center font-display text-2xl text-white mt-5">{active.label}</p>
           </div>
         </div>
       )}
