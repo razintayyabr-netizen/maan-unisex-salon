@@ -3,12 +3,12 @@
 import { useState } from 'react';
 
 const images = [
-  { src: 'https://images.unsplash.com/photo-1560066984-138dadb4c035?w=600&h=600&fit=crop', label: 'Hair Styling' },
-  { src: 'https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=600&h=600&fit=crop', label: 'Makeup' },
-  { src: 'https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=600&fit=crop', label: 'Bridal' },
-  { src: 'https://images.unsplash.com/photo-1519699047748-1b463d4baa73?w=600&h=600&fit=crop', label: 'Hair Spa' },
-  { src: 'https://images.unsplash.com/photo-1605497788046-5f5db6d5a9a0?w=600&h=600&fit=crop', label: 'Hair Color' },
-  { src: 'https://images.unsplash.com/photo-1521590832167-7bcbfa368690?w=600&h=600&fit=crop', label: 'Keratin' },
+  { src: '/images/g1.jpg', label: 'Hair Styling' },
+  { src: '/images/g2.jpg', label: 'Makeup' },
+  { src: '/images/g3.jpg', label: 'Bridal' },
+  { src: '/images/g4.jpg', label: 'Hair Spa' },
+  { src: '/images/g5.jpg', label: 'Hair Color' },
+  { src: '/images/g6.jpg', label: 'Keratin' },
 ];
 
 export default function Gallery() {
@@ -38,14 +38,11 @@ export default function Gallery() {
         </div>
       </div>
 
-      {/* Lightbox */}
       {active && (
         <div className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-6" onClick={() => setActive(null)}>
           <div className="relative max-w-4xl">
             <img src={active.src} alt={active.label} className="rounded-2xl max-h-[85vh] w-auto mx-auto" />
-            <button onClick={() => setActive(null)} className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 transition-all">
-              ✕
-            </button>
+            <button onClick={() => setActive(null)} className="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-white/70 hover:text-white hover:bg-white/10 transition-all">✕</button>
             <p className="text-center font-display text-2xl text-white mt-5">{active.label}</p>
           </div>
         </div>

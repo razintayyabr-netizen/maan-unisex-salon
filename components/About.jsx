@@ -3,27 +3,19 @@ export default function About() {
     <section id="about" className="py-28 px-6">
       <div className="max-w-6xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
-          {/* Visual */}
           <div className="relative">
             <div className="relative rounded-3xl overflow-hidden aspect-[4/5]">
-              <img
-                src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=600&h=750&fit=crop"
-                alt="MAAN Unisex Salon"
-                className="w-full h-full object-cover"
-              />
+              <img src="/images/salon-about.jpg" alt="MAAN Unisex Salon" className="w-full h-full object-cover" />
               <div className="absolute inset-0 bg-gradient-to-t from-[var(--dark)]/60 to-transparent" />
             </div>
-            {/* Badge */}
             <div className="absolute -bottom-6 -right-4 sm:right-8 bg-[var(--dark-2)] border border-[var(--rose)]/15 rounded-2xl px-8 py-5 shadow-2xl">
               <p className="text-gray-500 text-xs tracking-widest uppercase mb-1">Professionally</p>
               <p className="font-display text-3xl font-bold gradient-text">Trained by HABIB</p>
             </div>
-            {/* Decorative line */}
             <div className="absolute top-8 -left-4 w-20 h-[1px] bg-[var(--rose)]/30" />
             <div className="absolute top-8 -left-4 h-20 w-[1px] bg-[var(--rose)]/30" />
           </div>
 
-          {/* Text */}
           <div>
             <span className="text-[var(--rose)] text-xs tracking-[0.4em] uppercase font-medium">About Us</span>
             <h2 className="font-display text-5xl sm:text-6xl font-bold mt-4 mb-8">
@@ -39,7 +31,6 @@ export default function About() {
               or a complete beauty package, we&apos;ve got you covered — all at prices that won&apos;t break the bank.
             </p>
 
-            {/* Stats */}
             <div className="grid grid-cols-2 gap-5">
               {[
                 { icon: '🏆', title: 'Habib Trained', sub: 'Certified professionals' },
